@@ -1,11 +1,15 @@
+import "../styles/Hero.css";
+
 function Hero() {
   return (
-    <section>
+    <section className="hero">
       <h1>Your AI Mental Wellness Journal</h1>
 
       <p>
-        Write your thoughts, understand your emotions,
-        and discover patterns with AI.
+        Your AI-powered mental wellness journal.
+        Write your thoughts, discover emotional
+        patterns, and gain meaningful insights
+        about yourself.
       </p>
 
       <button>Start Journaling</button>

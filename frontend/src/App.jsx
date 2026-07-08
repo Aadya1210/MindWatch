@@ -1,10 +1,7 @@
+import Home from "./pages/Home";
+
 function App() {
-  return (
-    <div>
-      <h1>MindWatch</h1>
-      <p>Your AI Mental Wellness Journal</p>
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
