@@ -26,8 +26,25 @@ function JournalForm() {
     createdAt: new Date().toLocaleString(),
   };
 
-  console.log("New Journal Entry:");
-  console.log(newEntry);
+  fetch("http://localhost:5000/journal", {
+
+    method: "POST",
+
+    headers: {
+
+        "Content-Type": "application/json",
+
+    },
+
+    body: JSON.stringify(newEntry),
+
+})
+.then((response) => response.json())
+.then((data) => {
+
+    console.log(data);
+
+});
 
   alert("Journal entry saved!");
 
