@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function JournalForm() {
   // State
   const [journal, setJournal] = useState("");
   const [mood, setMood] = useState("");
+  const [entries, setEntries] = useState([]);
 
   // Mood list
   const moods = ["😊", "😄", "😐", "😔", "😡"];
+
+  useEffect(() => {
+    fetch("http://localhost:5000/journal")
+      .then((response) => response.json())
+      .then((data) => setEntries(data));
+  }, []);
 
   const handleSave = () => {
   if (journal.trim() === "") {
@@ -108,6 +115,14 @@ function JournalForm() {
         >
           Save Entry
         </button>
+
+        <h2 className="text-2xl font-bold mt-12 mb-4">
+            Previous Entries
+        </h2>
+
+        <pre>
+        {JSON.stringify(entries, null, 2)}
+        </pre>
 
       </div>
 
